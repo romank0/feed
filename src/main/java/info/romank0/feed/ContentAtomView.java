@@ -1,6 +1,7 @@
 package info.romank0.feed;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -50,6 +51,10 @@ public class ContentAtomView extends AbstractAtomFeedView {
 				Content content = new Content();
 				content.setValue(myFeed.getDescription());
 				entry.setSummary(content);
+				Content audioContent = new Content();
+				audioContent.setType("audio/mpeg");
+				audioContent.setValue("http://feedproxy.google.com/~r/RealPolish/~5/wO_bFGTTOdY/RP287-Rasid.mp3");
+				entry.setContents(Arrays.asList(audioContent));;
 				entries.add(entry);
 			}
 		}
